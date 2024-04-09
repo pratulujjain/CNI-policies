@@ -4,7 +4,7 @@ Prereqs:
 kubectl apply -f nginx.yaml -n nginx
 kubeactl apply -f busybox.yaml -n busybox
 
-Command
+Command:
 kubectl exec -it  busybox -- nc -zv <nginxpod ip> 80
 
 kubectl exec -it  busybox -n busybox -- nc -zv 192.168.146.196 80
