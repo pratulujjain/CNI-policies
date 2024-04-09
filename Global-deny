@@ -1,0 +1,8 @@
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: deny-app-policy
+spec:
+  namespaceSelector: has(projectcalico.org/name) && projectcalico.org/name not in {"kube-system", "calico-system", "tigera-system","calico-apiserver","calico-system","cattle-dashboards","cattle-fleet-system","cattle-impersonation-system","cattle-monitoring-system","cattle-system","cert-manager","cis-operatorsystem","ingress-nginx","kube-node-lease","kube-public","kube-system","local","metallb-system","tigera-operator","longhorn-system","busybox"}
+  types:
+  - Ingress
